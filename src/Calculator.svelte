@@ -99,7 +99,7 @@
 		/>
 		<input class="output" type="text" bind:value={output} readonly="true" />
 	</div>
-	<p>{total}</p>
+	<!-- <p>{total}</p> -->
 	<div class="buttons">
 		<div class="operations">
 			<button
@@ -212,17 +212,30 @@
 </div>
 
 <style>
+	.calculator {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		width: 50%;
+		padding: 2rem;
+		border-radius: 1rem;
+		background-color: grey;
+	}
+
 	.screen {
 		display: flex;
 		flex-direction: column;
 		border: solid black;
 		padding: 0;
+		background-color: white;
 	}
 	.calculations,
 	.output {
 		border-style: none;
-		padding-left: 0rem;
-		margin-left: 1rem;
+		padding: 0rem;
+		margin-right: 1rem;
+		text-align: right;
 	}
 
 	.output {
@@ -232,18 +245,64 @@
 		/* border: red solid; */
 	}
 
-	.number {
-		/* background-color: blue; */
-		/* display: flex;  */
+	.calculations {
+		opacity: 0.7;
+		margin-top: 0.2rem;
+	}
+
+	/* .number {
 		padding: 1rem;
 		border-radius: 0.2rem;
 	}
 
 	.numbers {
-		/* background-color: red; */
 		display: inline-flexbox;
-		/* justify-items: space-between; */
 		padding: 1rem;
 		margin: 1rem;
+	} */
+
+	.calculator .buttons {
+		display: flex;
+		flex-wrap: wrap;
+	}
+
+	.calculator .buttons .operations {
+		display: flex;
+		justify-content: space-between;
+		width: 100%;
+	}
+
+	.calculator .buttons .operations button {
+		width: 24%;
+	}
+
+	.calculator .buttons .numbers {
+		width: 75%;
+	}
+
+	.calculator .buttons .numbers > div {
+		display: flex;
+		justify-content: space-between;
+	}
+
+	.calculator .buttons .numbers > div button {
+		width: 32%;
+	}
+
+	.calculator .equal {
+		flex: 1;
+	}
+
+	.calculator .equal button {
+		margin-left: 5%;
+		width: 95%;
+		height: 95%;
+		background-color: lightblue;
+	}
+
+	.calculator .buttons {
+		outline: none;
+		border-radius: 0.2rem;
+		padding-top: 1rem;
 	}
 </style>
