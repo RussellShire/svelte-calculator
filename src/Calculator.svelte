@@ -1,5 +1,5 @@
 <script>
-	let total = '';
+	let total = 0;
 	let state = null;
 	let output = '';
 	let calculations = '';
@@ -11,7 +11,6 @@
 		if (calculations.slice(-1) == '=') {
 			calculations = output;
 		}
-		console.log(output);
 		switch (state) {
 			// case 'equals':
 			// 	calculations = calculations + '=';
@@ -45,7 +44,11 @@
 
 	function setOperation(operation) {
 		state = operation;
-		operand = output;
+		if (total === 0) {
+			operand = output;
+		} else {
+			operand = total;
+		}
 		resolveState();
 	}
 
@@ -71,10 +74,12 @@
 		calculations = calculations + value;
 		output = output + value;
 	}
+
 	function equal() {
 		resolveState();
-		console.log(calculations.slice(-1));
-		if (ops.includes(calculations.slice(-1))) {
+		// console.log(calculations);
+		console.log(calculations.toString().slice(-1));
+		if (ops.includes(calculations.toString().slice(-1))) {
 			calculations = calculations.slice(0, -1) + '=';
 		}
 
@@ -211,10 +216,20 @@
 		display: flex;
 		flex-direction: column;
 		border: solid black;
+		padding: 0;
 	}
 	.calculations,
 	.output {
 		border-style: none;
+		padding-left: 0rem;
+		margin-left: 1rem;
+	}
+
+	.output {
+		font-size: 2rem;
+		font-weight: bold;
+		padding: 0;
+		/* border: red solid; */
 	}
 
 	.number {
