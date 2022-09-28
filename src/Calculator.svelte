@@ -103,21 +103,25 @@
 	<div class="buttons">
 		<div class="operations">
 			<button
+				class="button-style"
 				on:click={() => {
 					setOperation('add');
 				}}>+</button
 			>
 			<button
+				class="button-style"
 				on:click={() => {
 					setOperation('subtract');
 				}}>-</button
 			>
 			<button
+				class="button-style"
 				on:click={() => {
 					setOperation('multiply');
 				}}>&times;</button
 			>
 			<button
+				class="button-style"
 				on:click={() => {
 					setOperation('divide');
 				}}>&divide;</button
@@ -126,19 +130,19 @@
 		<div class="numbers">
 			<div>
 				<button
-					class="number"
+					class="button-style"
 					on:click={() => {
 						setValue(7);
 					}}>7</button
 				>
 				<button
-					class="number"
+					class="button-style"
 					on:click={() => {
 						setValue(8);
 					}}>8</button
 				>
 				<button
-					class="number"
+					class="button-style"
 					on:click={() => {
 						setValue(9);
 					}}>9</button
@@ -146,19 +150,19 @@
 			</div>
 			<div>
 				<button
-					class="number"
+					class="button-style"
 					on:click={() => {
 						setValue(4);
 					}}>4</button
 				>
 				<button
-					class="number"
+					class="button-style"
 					on:click={() => {
 						setValue(5);
 					}}>5</button
 				>
 				<button
-					class="number"
+					class="button-style"
 					on:click={() => {
 						setValue(6);
 					}}>6</button
@@ -166,19 +170,19 @@
 			</div>
 			<div>
 				<button
-					class="number"
+					class="button-style"
 					on:click={() => {
 						setValue(1);
 					}}>1</button
 				>
 				<button
-					class="number"
+					class="button-style"
 					on:click={() => {
 						setValue(2);
 					}}>2</button
 				>
 				<button
-					class="number"
+					class="button-style"
 					on:click={() => {
 						setValue(3);
 					}}>3</button
@@ -186,19 +190,19 @@
 			</div>
 			<div>
 				<button
-					class="number"
+					class="button-style"
 					on:click={() => {
 						setValue(0);
 					}}>0</button
 				>
 				<button
-					class="number"
+					class="button-style"
 					on:click={() => {
 						setValue('.');
 					}}>.</button
 				>
 				<button
-					class="number"
+					class="button-style"
 					on:click={() => {
 						setValue('C');
 					}}>C</button
@@ -206,7 +210,7 @@
 			</div>
 		</div>
 		<div class="equal">
-			<button on:click={equal}>=</button>
+			<button class="button-style" on:click={equal}>=</button>
 		</div>
 	</div>
 </div>
@@ -221,12 +225,15 @@
 		padding: 2rem;
 		border-radius: 1rem;
 		background-color: grey;
+		box-shadow: rgba(45, 35, 66, 0.4) 0 2px 4px,
+			rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #d6d6e7 0 -8px 0 inset;
 	}
 
 	.screen {
 		display: flex;
 		flex-direction: column;
-		border: solid black;
+		border: solid darkgray;
+		border-radius: 0.5rem;
 		padding: 0;
 		background-color: white;
 	}
@@ -249,17 +256,6 @@
 		opacity: 0.7;
 		margin-top: 0.2rem;
 	}
-
-	/* .number {
-		padding: 1rem;
-		border-radius: 0.2rem;
-	}
-
-	.numbers {
-		display: inline-flexbox;
-		padding: 1rem;
-		margin: 1rem;
-	} */
 
 	.calculator .buttons {
 		display: flex;
@@ -304,5 +300,52 @@
 		outline: none;
 		border-radius: 0.2rem;
 		padding-top: 1rem;
+	}
+
+	.button-style {
+		align-items: center;
+		appearance: none;
+		background-color: #fcfcfd;
+		border-radius: 4px;
+		border-width: 0;
+		box-shadow: rgba(45, 35, 66, 0.4) 0 2px 4px,
+			rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #d6d6e7 0 -3px 0 inset;
+		box-sizing: border-box;
+		color: #36395a;
+		cursor: pointer;
+		display: inline-flex;
+		height: 48px;
+		justify-content: center;
+		line-height: 1;
+		list-style: none;
+		overflow: hidden;
+		padding-left: 16px;
+		padding-right: 16px;
+		position: relative;
+		text-align: left;
+		text-decoration: none;
+		transition: box-shadow 0.15s, transform 0.15s;
+		user-select: none;
+		-webkit-user-select: none;
+		touch-action: manipulation;
+		white-space: nowrap;
+		will-change: box-shadow, transform;
+		font-size: 1.7rem;
+	}
+
+	/* .button-style:focus {
+		box-shadow: #d6d6e7 0 0 0 1.5px inset, rgba(45, 35, 66, 0.4) 0 2px 4px,
+			rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #d6d6e7 0 -3px 0 inset;
+	}
+
+	.button-style:hover {
+		box-shadow: rgba(45, 35, 66, 0.4) 0 4px 8px,
+			rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #d6d6e7 0 -3px 0 inset;
+		transform: translateY(-2px);
+	} */
+
+	.button-style:active {
+		box-shadow: #d6d6e7 0 3px 7px inset;
+		transform: translateY(2px);
 	}
 </style>
