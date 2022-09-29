@@ -1,5 +1,14 @@
 # svelte app
 
+## svelte calculator
+
+### to do:
+
+- If user selects Operand first it returns NaN
+- If user selects, number, operand, number, operand, equals it calculates incorrectly
+- User can currently put two operands side-by-side with unexpected calculations. Once an operand has been selected nothing except number or equals should be accepted
+- User can currently add multiple decimals to a single number, everything after the second decimal is currently ignored. Second decimal in a single float shouldn't be possible at all.
+
 This is a project template for [Svelte](https://svelte.dev) apps. It lives at https://github.com/sveltejs/template.
 
 To create a new project based on this template using [degit](https://github.com/Rich-Harris/degit):
