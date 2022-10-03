@@ -79,7 +79,7 @@
 		resolveState();
 		// console.log(calculations);
 		console.log(calculations.toString().slice(-1));
-		if (ops.includes(calculations.toString().slice(-1))) {
+		if (ops.includes(calculations.slice(-1))) {
 			calculations = calculations.slice(0, -1) + '=';
 		}
 
@@ -221,7 +221,7 @@
 		top: 50%;
 		left: 50%;
 		transform: translate(-50%, -50%);
-		width: 50%;
+		width: 300px;
 		padding: 2rem;
 		border-radius: 1rem;
 		background-color: grey;
