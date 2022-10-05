@@ -1,6 +1,10 @@
-# svelte app
+# svelte calculator
 
-## svelte calculator
+A calculator built using svelte to explore the framework.
+
+# Hosted
+
+https://russellshire.github.io/svelte-calculator/
 
 ### to do:
 
