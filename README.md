@@ -2,6 +2,10 @@
 
 A calculator built using svelte to explore the framework.
 
+This is one of several calculators I've built to learn different JavaScript frameworks.
+Vue Calculator: https://github.com/RussellShire/vue-calculator
+React Calculator: https://github.com/RussellShire/react-calculator
+
 # Hosted
 
 https://russellshire.github.io/svelte-calculator/
